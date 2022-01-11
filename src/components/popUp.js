@@ -1,12 +1,13 @@
 import React from "react";
  
 export const PopUp = props => {
+    console.log(props.content)
   return (
-    <div className="chromeBrowser">
-      <div className="box">
-        <span className="close-icon" onClick={props.handleClose}>x</span>
-        {props.content}
-      </div>
+      <div>
+            <div className="finderPop">
+                Finder
+            </div>
+            <div className="finderTriangle"/>
     </div>
   );
 };

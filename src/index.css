@@ -145,16 +145,40 @@ body {
   border-left: 1px solid rgba(196, 196, 196, 0.3);
   height: 50px;
   position: absolute;
-  left: 80%;
+  right: 10%;
   margin-left: auto;
   margin: 10px;
 }
 
-.chromeBrowser {
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
+.finderPop {
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-style: solid;
+  border-radius:5px;
+  border-color: rgba(128, 128, 128, 0);
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 0.2); /* slighly transparent white */
+  position: absolute;
+  width: 4%;
+  bottom: 90px;
+  left: 33%;
+  backdrop-filter: blur(30px);
+  flex-wrap: wrap;
+  color: white;
+  text-align: center;
+  padding: 9px 0;
+  font-size: 13px;
+}
+
+.finderTriangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  bottom: 80px;
+  left: 34.8%;
 }
 
 code {

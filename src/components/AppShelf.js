@@ -1,41 +1,105 @@
 import { PopUp } from "./popUp"
 import { useState } from "react"
-import { chromeBrowser } from "./chromeBrowser"
 
 export const AppShelf = () => {
+
 
     const displayIdenifier = (name) => {
         console.log(`${name} was pressed`);
     }
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isFinder, setIsFinder] = useState(false);
  
-    const displayName = () => {
-      setIsOpen(!isOpen);
+    const displayNameFinder = () => {
+      setIsFinder(!isFinder);
     }
+
+    const leaveDisplayNameFinder = () => {
+        setIsFinder(!isFinder);
+    }
+
+
+
 
     const [isChrome, setIsChrome] = useState(false);
  
-    const clickChrome = (name) => {
+    const displayNameChrome = () => {
       setIsChrome(!isChrome);
     }
 
+    const leaveDisplayNameChrome = () => {
+        setIsChrome(!isChrome);
+    }
+
+
+
+    const [isTerminal, setIsTerminal] = useState(false);
+
+    const displayNameTerminal = () => {
+        setIsTerminal(!isTerminal);
+    }
+  
+    const leaveDisplayNameTerminal = () => {
+        setIsTerminal(!isTerminal);
+    }
+
+
+
+    const [isTrash, setIsTrash] = useState(false);
+ 
+    const displayNameTrash = () => {
+        setIsTrash(!isTrash);
+    }
+    
+    const leaveDisplayNameTrash = () => {
+        setIsChrome(!isTrash);
+    }
+
+
+
     return (
-        
-        <div className='appShelf'>
-            <button className='deskAppFinder' onMouseOver={() => displayName('Finder')} onClick={() => displayIdenifier('Finder')}/>
-            <button className='deskAppChrome' onMouseOver={() => displayName('Chrome')} onClick={() => clickChrome('Chrome')}/>  
-            <button className='deskAppTerminal' onMouseOver={() => displayName('Terminal')} onClick={() => displayIdenifier('Terminal')}/>
-            <button className='deskAppTrash' onMouseOver={() => displayName('Trash')} onClick={() => displayIdenifier('Trash')}/>  
-            <div className='appDeskDivider'/>  
-            {isOpen && <PopUp content={<>
-            <b>Design your Popup</b>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button>Test button</button>
-            </>}
-            handleClose={displayName}
-            />}
-            {isChrome && <chromeBrowser/>}
+        <div>
+            <div className='appShelf'>
+
+                {/* Applications and events */}
+
+                <button className='deskAppFinder' 
+                    onMouseOver={() => displayNameFinder('Finder')} 
+                    onMouseLeave={() => leaveDisplayNameFinder('Finder')} 
+                    onClick={() => displayIdenifier('Finder')}/>
+
+                <button className='deskAppChrome' 
+                    onMouseOver={() => displayNameChrome('Chrome')} 
+                    onMouseLeave={() => leaveDisplayNameChrome('Chrome')} 
+                    onClick={() => displayIdenifier('Chrome')}/>  
+
+                <button className='deskAppTerminal' 
+                    onMouseOver={() => displayNameTerminal('Terminal')} 
+                    onMouseLeave={() => leaveDisplayNameTerminal('Terminal')} 
+                    onClick={() => displayIdenifier('Terminal')}/>
+
+                <button className='deskAppTrash' 
+                    onMouseOver={() => displayNameTrash('Trash')} 
+                    onMouseLeave={() => leaveDisplayNameTrash('Trash')} 
+                    onClick={() => displayIdenifier('Trash')}/>  
+
+                <div className='appDeskDivider'/>  
+            </div>
+
+                {/* Creating popup of application names */}
+
+                {isFinder && <PopUp content={'Finder'}
+                    handleClose={displayNameFinder}
+                />}
+                {isChrome && <PopUp content={'Chrome'}
+                    handleClose={displayNameChrome}
+                />}
+                {isTerminal && <PopUp content={'Terminal'}
+                    handleClose={displayNameTerminal}
+                />}
+                {isTrash && <PopUp content={'Trash'}
+                    handleClose={displayNameTrash}
+                />}
         </div>
     )
 }
