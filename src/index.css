@@ -77,7 +77,6 @@ body {
   backdrop-filter: blur(30px);
   flex-wrap: wrap;
   padding-inline: 5px;
-
 }
 
 
@@ -145,32 +144,47 @@ body {
   border-left: 1px solid rgba(196, 196, 196, 0.3);
   height: 50px;
   position: absolute;
-  right: 10%;
-  margin-left: auto;
+  right: 7%;
   margin: 10px;
 }
 
-.finderPop {
+.hoverDiv {
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
   border-style: solid;
-  border-radius:5px;
+  border-radius:20px;
+  border-color: rgba(128, 128, 128, 0);
+  border-width: 1px;/* slighly transparent white */
+  height: 140px;
+  position: absolute;
+  width: 35%;
+  bottom: 5px;
+  left: 33%;
+  /* center plz */
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline: 10px;
+}
+
+.Finder {
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-style: solid;
+  border-radius:4px;
   border-color: rgba(128, 128, 128, 0);
   border-width: 1px;
   background-color: rgba(255, 255, 255, 0.2); /* slighly transparent white */
   position: absolute;
-  width: 4%;
   bottom: 90px;
-  left: 33%;
   backdrop-filter: blur(30px);
   flex-wrap: wrap;
   color: white;
   text-align: center;
-  padding: 9px 0;
-  font-size: 13px;
+  padding: 3px 7px;
+  font-size: 15px;
 }
 
-.finderTriangle {
+.FinderTriangle {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
@@ -178,7 +192,97 @@ body {
   border-top: 10px solid rgba(255, 255, 255, 0.2);
   position: absolute;
   bottom: 80px;
-  left: 34.8%;
+  margin-left: 22px;
+}
+
+.Chrome {
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-style: solid;
+  border-radius:4px;
+  border-color: rgba(128, 128, 128, 0);
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 0.2); /* slighly transparent white */
+  position: absolute;
+  bottom: 90px;
+  backdrop-filter: blur(30px);
+  flex-wrap: wrap;
+  color: white;
+  text-align: center;
+  padding: 3px 7px;
+  font-size: 15px;
+  margin-left: 55px;
+}
+
+.ChromeTriangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  bottom: 80px;
+  margin-left: 80px;
+}
+
+.Terminal {
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-style: solid;
+  border-radius:4px;
+  border-color: rgba(128, 128, 128, 0);
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 0.2); /* slighly transparent white */
+  position: absolute;
+  bottom: 90px;
+  backdrop-filter: blur(30px);
+  flex-wrap: wrap;
+  color: white;
+  text-align: center;
+  padding: 3px 7px;
+  font-size: 15px;
+  margin-left: 110px;
+}
+
+.TerminalTriangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  bottom: 80px;
+  margin-left: 140px;
+}
+
+.Trash {
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-style: solid;
+  border-radius:4px;
+  border-color: rgba(128, 128, 128, 0);
+  border-width: 1px;
+  background-color: rgba(255, 255, 255, 0.2); /* slighly transparent white */
+  position: absolute;
+  bottom: 90px;
+  backdrop-filter: blur(30px);
+  flex-wrap: wrap;
+  color: white;
+  text-align: center;
+  padding: 3px 7px;
+  font-size: 15px;
+  margin-left: 838px;
+}
+
+.TrashTriangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid rgba(255, 255, 255, 0.2);
+  position: absolute;
+  bottom: 80px;
+  margin-left: 858px;
 }
 
 code {

@@ -1,5 +1,6 @@
 import { PopUp } from "./popUp"
 import { useState } from "react"
+import { chrome } from './chromeBrowser'
 
 export const AppShelf = () => {
 
@@ -9,50 +10,24 @@ export const AppShelf = () => {
     }
 
     const [isFinder, setIsFinder] = useState(false);
- 
-    const displayNameFinder = () => {
-      setIsFinder(!isFinder);
-    }
-
-    const leaveDisplayNameFinder = () => {
-        setIsFinder(!isFinder);
-    }
-
-
-
-
     const [isChrome, setIsChrome] = useState(false);
- 
-    const displayNameChrome = () => {
-      setIsChrome(!isChrome);
-    }
-
-    const leaveDisplayNameChrome = () => {
-        setIsChrome(!isChrome);
-    }
-
-
-
     const [isTerminal, setIsTerminal] = useState(false);
-
-    const displayNameTerminal = () => {
-        setIsTerminal(!isTerminal);
-    }
-  
-    const leaveDisplayNameTerminal = () => {
-        setIsTerminal(!isTerminal);
-    }
-
-
-
     const [isTrash, setIsTrash] = useState(false);
- 
-    const displayNameTrash = () => {
-        setIsTrash(!isTrash);
+
+    {/*Nested block please fix */}
+
+    const displayName = (name) => {
+        {name === 'Finder' && setIsFinder(!isFinder)};
+        {name === 'Chrome' && setIsChrome(!isChrome)};
+        {name === 'Terminal' && setIsTerminal(!isTerminal)};
+        {name === 'Trash' && setIsTrash(!isTrash)};
     }
-    
-    const leaveDisplayNameTrash = () => {
-        setIsChrome(!isTrash);
+
+    const leaveDisplayName = (name) => {
+        {name === 'Finder' && setIsFinder(!isFinder)};
+        {name === 'Chrome' && setIsChrome(!isChrome)};
+        {name === 'Terminal' && setIsTerminal(!isTerminal)};
+        {name === 'Trash' && setIsTrash(!isTrash)};
     }
 
 
@@ -64,23 +39,23 @@ export const AppShelf = () => {
                 {/* Applications and events */}
 
                 <button className='deskAppFinder' 
-                    onMouseOver={() => displayNameFinder('Finder')} 
-                    onMouseLeave={() => leaveDisplayNameFinder('Finder')} 
+                    onMouseOver={() => displayName('Finder')} 
+                    onMouseLeave={() => leaveDisplayName('Finder')} 
                     onClick={() => displayIdenifier('Finder')}/>
 
                 <button className='deskAppChrome' 
-                    onMouseOver={() => displayNameChrome('Chrome')} 
-                    onMouseLeave={() => leaveDisplayNameChrome('Chrome')} 
+                    onMouseOver={() => displayName('Chrome')} 
+                    onMouseLeave={() => leaveDisplayName('Chrome')} 
                     onClick={() => displayIdenifier('Chrome')}/>  
 
                 <button className='deskAppTerminal' 
-                    onMouseOver={() => displayNameTerminal('Terminal')} 
-                    onMouseLeave={() => leaveDisplayNameTerminal('Terminal')} 
+                    onMouseOver={() => displayName('Terminal')} 
+                    onMouseLeave={() => leaveDisplayName('Terminal')} 
                     onClick={() => displayIdenifier('Terminal')}/>
 
                 <button className='deskAppTrash' 
-                    onMouseOver={() => displayNameTrash('Trash')} 
-                    onMouseLeave={() => leaveDisplayNameTrash('Trash')} 
+                    onMouseOver={() => displayName('Trash')} 
+                    onMouseLeave={() => leaveDisplayName('Trash')} 
                     onClick={() => displayIdenifier('Trash')}/>  
 
                 <div className='appDeskDivider'/>  
@@ -89,16 +64,16 @@ export const AppShelf = () => {
                 {/* Creating popup of application names */}
 
                 {isFinder && <PopUp content={'Finder'}
-                    handleClose={displayNameFinder}
+                    handleClose={displayName}
                 />}
                 {isChrome && <PopUp content={'Chrome'}
-                    handleClose={displayNameChrome}
+                    handleClose={displayName}
                 />}
                 {isTerminal && <PopUp content={'Terminal'}
-                    handleClose={displayNameTerminal}
+                    handleClose={displayName}
                 />}
                 {isTrash && <PopUp content={'Trash'}
-                    handleClose={displayNameTrash}
+                    handleClose={displayName}
                 />}
         </div>
     )
